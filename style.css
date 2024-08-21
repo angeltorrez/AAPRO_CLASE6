@@ -1,10 +1,15 @@
-*{margin: 0px;}
+*{margin: 0px;
+padding: 0px;}
+body{
+  background-color: cadetblue;
+}
 main{
   display:grid;
-  grid-template-columns: 4fr 1fr;
+  grid-template-columns: 3fr 1fr;
   grid-template-rows: 1fr 5fr 3fr;
   justify-content: space-around;
-  align-items: center;
+
+  gap:20px
 }
 h1{
   justify-self: center;
@@ -13,10 +18,19 @@ h1{
   padding: 0px 40px;
   max-width: 500px;
 }
+article{
+  justify-content: center;
+  align-content: center;
+  width: 600px;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 aside{
   justify-content: center;
   align-content: center;
-  width: 300px; /* Ancho del aside en pantallas grandes */
+  width: 300px;
   padding: 20px;
   background-color: #f0f0f0;
   border: 1px solid #ddd;
@@ -24,15 +38,29 @@ aside{
 
 }
 aside li{
+  padding-left: 25px;
   list-style-type:none;
   margin-top: 20px;
 }
-aside h2{
+p{
+  max-width: 600px;
+  word-wrap: break-word;
+  text-wrap: pretty;
+  padding: 20px 40px ;
+}
+h2{
   margin-bottom: 20px;
+  text-align: center;
 }
 fieldset{
+  border-radius: 8px;
+  padding: 30px;
   min-width: 400px;
   justify-self: center;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
 }
 .formContainer{
   display: flex;
@@ -50,14 +78,20 @@ fieldset{
   width: 50%;
   margin: 0px auto;
 }
+legend{
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  font-size: 1.2rem;
+}
 @media (max-width: 768px) {
   main{
-    grid-template-columns: 100%;
-
+    
+    grid-template-columns: 1fr;
   }
-  aside {
-    width: 100%; /* Ancho del aside en pantallas medianas y pequeñas */
+  aside, article,fieldset{
+    width: 100%;
     padding: 10px;
+    grid-column: 1;
   }
 }
 @media (max-width: 480px) {
